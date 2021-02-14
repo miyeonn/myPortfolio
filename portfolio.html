@@ -28,6 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Myeongjo:wght@700&family=Noto+Sans+KR:wght@500&family=Noto+Serif+KR&display=swap" rel="stylesheet">
   <link href="${path }/resources/css/one-page-wonder.min.css" rel="stylesheet">
+  <script type="text/javascript" src="YouTubePopUp.jquery.js"></script>
 <meta charset="UTF-8">
 <title>메인 홈</title>
 <style>
@@ -180,7 +181,7 @@
 			개발기간 2020.11~2021.01<br/>
 
 			</h5>
-			<button class="btn btn-primary" onclick=>Youtube</button>
+			<button class="btn btn-primary youtube" onclick="https://youtu.be/4xxq9YxC9Tc">Youtube</button>
 			<button class="btn btn-primary" onclick="window.open('https://github.com/miyeonn/acupoftea')">Github</button>
 		</div>
 	</div>
@@ -228,3 +229,9 @@
 		</div>
 	</div>
 </section>
+<script>
+jQuery(function(){
+	jQuery("button.youtube").YouTubePopUp();
+	//jQuery("a.bla-2").YouTubePopUp( { autoplay: 0 } ); // Disable autoplay
+});
+</script>
