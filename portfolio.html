@@ -31,7 +31,10 @@
 <meta charset="UTF-8">
 <title>메인 홈</title>
 <style>
+	header{
 
+	min-height:200px;
+	}
 
 	 .title
 	 {
@@ -138,9 +141,9 @@
 
 <header class="masthead text-center text-white">
     <div class="masthead-content">
-      <div class="container">
+      <div class="container pt-5">
     
-        <h5 class="mt-4 mb-0" style="color:#8c5a53;font-family:'Noto Serif KR', serif;">안녕하세요,김미연 입니다</h5>
+        <h1 class="mt-4 mb-0" style="color:#8c5a53;font-family:'Noto Serif KR', serif;">안녕하세요,김미연 입니다</h1>
       </div>
     </div>
 </header>
@@ -269,7 +272,7 @@
 $(".popupModalVideo").click(function() {
     $(".video_modal_popup").addClass("reveal"),
     $(".video_modal_popup .video-wrapper").remove(),
-    $(".video_modal_popup").append("<div class='video-wrapper'><iframe width='560' height='315' src='https://youtu.be/4xxq9YxC9Tc&autoplay=1' allow='autoplay; encrypted-media' allowfullscreen></iframe></div>")
+    $(".video_modal_popup").append("<div class='video-wrapper'><iframe width='560' height='315' src='https://youtube.com/embed/4xxq9YxC9Tc' allow='autoplay; encrypted-media' allowfullscreen></iframe></div>")
 }),
 $(".video_modal_popup-closer").click(function() {
     $(".video_modal_popup .video-wrapper").remove(),
