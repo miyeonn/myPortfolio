@@ -27,9 +27,6 @@
 <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Myeongjo:wght@700&family=Noto+Sans+KR:wght@500&family=Noto+Serif+KR&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="YouTubePopUp.css">
-<script type="text/javascript" src="jquery-1.12.1.min.js"></script>
-<script type="text/javascript" src="YouTubePopUp.jquery.js"></script>
 
 <meta charset="UTF-8">
 <title>메인 홈</title>
@@ -99,6 +96,40 @@
 		min-height:300px;
 		
 	 }
+	 .video_modal_popup.reveal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index:9
+}
+
+.video_modal_popup .video-wrapper {
+    position: relative;
+    width: 80%;
+    padding-bottom: 45%;
+    z-index: 10
+}
+
+.video_modal_popup .video-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.video_modal_popup.reveal .video_modal_popup-closer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 9
+}
 	
 
 </style>
@@ -183,8 +214,11 @@
 			개발기간 2020.11~2021.01<br/>
 
 			</h5>
-			<button class="btn btn-primary youtube" onclick="https://youtu.be/4xxq9YxC9Tc">Youtube</button>
+			<button class="btn btn-primary popupModalVideo" onclick="https://youtu.be/4xxq9YxC9Tc">Youtube</button>
 			<button class="btn btn-primary" onclick="window.open('https://github.com/miyeonn/acupoftea')">Github</button>
+		</div>
+		<div class="video_modal_popup">
+  			<div class="video_modal_popup-closer"></div>
 		</div>
 	</div>
 	<div class="p-container d-flex ">
@@ -232,8 +266,13 @@
 	</div>
 </section>
 <script>
-$(function(){
-	$("button.youtube").YouTubePopUp();
-	//jQuery("a.bla-2").YouTubePopUp( { autoplay: 0 } ); // Disable autoplay
+$(".popupModalVideo").click(function() {
+    $(".video_modal_popup").addClass("reveal"),
+    $(".video_modal_popup .video-wrapper").remove(),
+    $(".video_modal_popup").append("<div class='video-wrapper'><iframe width='560' height='315' src='https://youtu.be/4xxq9YxC9Tc?rel=0&playsinline=1&autoplay=1' allow='autoplay; encrypted-media' allowfullscreen></iframe></div>")
+}),
+$(".video_modal_popup-closer").click(function() {
+    $(".video_modal_popup .video-wrapper").remove(),
+    $(".video_modal_popup").removeClass("reveal")
 });
 </script>
